@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+
+
+
+<div class="jumbotron list" >
+
+    <div class="alert alert-warning fade in alert-dismissable" style="margin-top:18px;" ng-show="alertMsg">
+              <strong>Info! {{alertMsg}}</strong>
+              <a href="" class="close" data-dismiss="alert" aria-label="close" title="close"></a>
+   </div>
+   
+	<div ng-show="users.length"> 
+
+    <div class="panel-heading">
+        <h2 class="panel-title text-center">Users</h2>
+    </div>
+    <div class="panel-body">
+	<div class="table-responsive">
+        <table class="table table-striped">
+            <tr class="thead-inverse">
+                <th>
+                    <button class="btn btn-default glyphicon glyphicon-retweet" ng-click="sortBy('id')">ID</button>
+                    <span class="sortorder" ng-show="propertyName === 'id'" ng-class="{reverse: reverse}"></span>
+                </th>
+
+                <th>Name of user</th>
+                <th>email</th>
+                <th>telephone</th>
+                <th>sex</th>
+                <th>Actions</th>
+            </tr>
+            <tr ng-repeat="user in users
+                          | orderBy:UserCtrl.propertyName:reverse">
+
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.telephone}}</td>
+                <td>{{user.sex}}</td>
+                <td>
+                    <button class="btn btn-warning" data-ng-click="userDetail(user);"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Detail</button>
+                 
+                </td>
+            </tr>
+        </table>
+       </div>	 
+    </div>
+   </div> 
+</div>

@@ -1,0 +1,100 @@
+<meta charset="UTF-8">
+<div class="jumbotron form">
+<div class="row">
+
+
+   
+    <div class="col-md-9" style="padding-left: 350px;" ng-show="showForm">
+    
+      <div class="alert alert-warning fade in alert-dismissable" style="margin-top:18px;" ng-show="alertMsg">
+              <strong>Info! {{alertMsg}}</strong>
+              <a href="" class="close" data-dismiss="alert" aria-label="close" title="close"></a>
+   </div>
+    <form name="userForm">
+       
+            <div class="row">
+
+                <div class="col-sm-9">
+                    <div class="form-group">
+                        <label class="label-control" for="id">id</label>
+                        <input type="text" class="form-control" id="id"  name="id" readonly="readonly" data-ng-model="user.id">
+                    </div>
+                </div>
+
+                <div class="col-sm-9">
+                    <div class="form-group">
+                        <label for="name">Name of User</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="name do user" data-ng-required="true" data-ng-model="user.name">
+                    </div>
+                </div>
+
+                <div class="col-sm-9">
+                    <div class="form-group">
+                        <label for="email">Email of User</label>
+                        <input type="text" class="form-control" id="email" name="email"  placeholder="email" data-ng-required="true" data-ng-model="user.email">
+                    </div>
+                </div>
+	
+                <div class="col-sm-9">
+                    <div class="form-group">
+                        <label for="telephone">Telephone</label>                     
+                        <input type="text" class="form-control" id="telephone" name="telephone"    data-ng-required="true"  placeholder="telephone" data-ng-model="user.telephone">
+                    </div>
+
+
+                <div class="col-sm-9">
+                    <div class="form-group">
+                        <label for="sex">sex</label>                        
+                        <select class="form-control" id="sex" data-ng-model="user.sex" name="sex"  data-ng-options="x for x in sex" data-ng-required="true">
+                        <option value="">-- Select --</option>
+                        </select>                        
+                    </div>
+                </div>
+
+                       <div class="col-sm-6">
+                            <div class="form-group">
+                                    <button type="submit"
+                                            class="btn btn-warning btn-lg btn-block"
+                                             data-ng-disabled="!(user.name && user.email && user.telephone && user.sex)"
+                                            data-ng-click="update(user);"
+                                            data-ng-if="showUpdate">
+                                        Update!
+                                    </button>
+                              </div>         
+                      </div>          
+                      
+                     	<div class="col-sm-6">
+                            <div class="form-group">   
+                                     <button type="submit"
+                                            class="btn btn-danger btn-lg btn-block"
+                                            data-ng-click="deleteUser(user);"
+                                            data-ng-if="showDelete">
+                                        Delete!
+                              		</button>  
+                               </div>  		 
+						  </div>  
+						  
+						      	<div class="col-sm-12">
+                            <div class="form-group">  
+                                    <button type="submit"
+                                            class="btn btn-success btn-lg btn-block"
+                                            data-ng-disabled="!(user.name && user.email && user.telephone && user.sex)"
+                                            data-ng-click="create(user);"
+                                            data-ng-if="showCreate">
+                                        Create!
+                                    </button>
+                                 </div>      
+							 </div>
+							 
+					<div class="col-sm-12">
+                            <div class="form-group">   
+                                    <button class="btn btn-default btn-lg btn-block" data-ng-click="redirectToUsers();">Cancel</button>
+							</div>                          
+                     </div>
+      
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+</div>

@@ -15,7 +15,19 @@
 
 </head>
 
-<body>
+<body>	
+	
+	<!-- NAVIGATION -->	
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	    <div class="navbar-header">
+	        <a class="navbar-brand" ui-sref="#">Test Full Stack</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	        <li><a ui-sref="app">Home</a></li>
+	        <li><a ui-sref="user-add">Add User</a></li>
+	        <li><a ui-sref="user">User</a></li>
+	    </ul>
+	</nav>
 
 	<div ui-view></div>
 
@@ -28,6 +40,10 @@
 	<script src="/app/app-controller.js"></script>
 	<script src="/app/app-route.js"></script>
 
+ 	<script src="/app/factory/UserFactory.js"></script>
+	<script src="/app/services/UserService.js"></script>
+	<script src="/app/facade/UserFacade.js"></script>
+	<script src="/app/controllers/UserController.js"></script>
 </body>
 
 </html>
